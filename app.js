@@ -1,13 +1,11 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-
+const router = require("./Routes/UserRoutes");
 const app = express();
 
 //Middleware
-app.use("/", (req, res, next) => {
-    res.send("It is working");
-});
+app.use("/users",router);
 app.listen(5000, () => {
     console.log("Server is running on port 5000");
 });
