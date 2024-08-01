@@ -19,3 +19,8 @@ const userSchema = new Schema({
         required:true//validate
     },
 })
+
+module.exports = mongoose.model(
+    "UserModel",//file name
+    userSchema //function name
+)
