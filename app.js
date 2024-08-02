@@ -2,20 +2,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = require("./Route/UserRoutes");
+
 const app = express();
 
 //Middleware
-app.use("/users",router);
-app.listen(5000, () => {
-    console.log("Server is running on port 5000");
-});
+(express()).use("/users",router);
 
-const uri = `mongodb+srv://keshanshavidu:Shavindu2000@shavindu9.1gh7s13.mongodb.net/?retryWrites=true&w=majority&appName=Shavindu9`;
-
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+mongoose.connect("mongodb+srv://keshanshavidu:Shavindu2000@shavindu9.1gh7s13.mongodb.net/?retryWrites=true&w=majority&appName=Shavindu9")
+.then(()=> console.log("connected to Mongodb"))
+.then(() => {
+    (express()).listen(5000);
 })
-.then(() => console.log("Connected to MongoDB"))
-
-.catch((err) => console.log(err));
+.catch((err)=> console.log((err)));
