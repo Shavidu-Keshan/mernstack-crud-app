@@ -23,10 +23,11 @@ const getAllUsers = async(req,res,next) => {
 const addUsers = async (req ,res ,next) => {
     const { name, gmail, age, address } = req.body;
 
+
     let  users;
 
     try{
-        users= new users({name, gmail, age, address});
+        users = new users({name, gmail, age, address});
         await users.save();
 
     }catch(err){
