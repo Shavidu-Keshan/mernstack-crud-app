@@ -6,11 +6,11 @@ const router = require("./Route/UserRoutes");
 const app = express();
 
 //Middleware
-(express()).use("/users",router);
+app.use("/users",router);
 
 mongoose.connect("mongodb+srv://keshanshavidu:Shavindu2000@shavindu9.1gh7s13.mongodb.net/?retryWrites=true&w=majority&appName=Shavindu9")
 .then(()=> console.log("connected to Mongodb"))
 .then(() => {
-    (express()).listen(5000);
+    app.listen(5000);
 })
 .catch((err)=> console.log((err)));
