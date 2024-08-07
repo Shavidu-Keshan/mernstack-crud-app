@@ -40,7 +40,7 @@ const addUsers = async (req ,res ,next) => {
     return res.status(200).json({users});
 };
 
-//get by id
+//getbyid
 const getById = async (req,res,next) => {
 
     const id = req.params.id;
@@ -51,8 +51,14 @@ const getById = async (req,res,next) => {
     }catch(err){
         console.log(err);
     }
-    
+    //not available users
+    if(!user){
+        return res.status(404).json({message:"user not found"});
+    }
+    return res.status(200).json({user});
+
 }
 
 exports.getAllUsers = getAllUsers;
 exports.addUsers = addUsers;
+exports.getById = getById;
