@@ -8,8 +8,8 @@ const app = express();
 
 
 //Middleware
-app.use("/users",router);
 app.use(express.json());
+app.use("/users",router);
 
 mongoose.connect("mongodb+srv://keshanshavidu:Shavindu2000@shavindu9.1gh7s13.mongodb.net/?retryWrites=true&w=majority&appName=Shavindu9")
 .then(()=> console.log("connected to Mongodb"))

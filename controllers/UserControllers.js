@@ -27,7 +27,7 @@ const addUsers = async (req ,res ,next) => {
     let  users;
 
     try{
-        users = new users({name, gmail, age, address});
+        users = new User({name, gmail, age, address});
         await users.save();
 
     }catch(err){
