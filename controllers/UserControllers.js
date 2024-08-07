@@ -38,6 +38,20 @@ const addUsers = async (req ,res ,next) => {
         return res.status(404).json({message:"unable to add users"});
     }
     return res.status(200).json({users});
+};
+
+//get by id
+const getById = async (req,res,next) => {
+
+    const id = req.params.id;
+    let user;
+
+    try{
+      user =  await User.findById(id);
+    }catch(err){
+        console.log(err);
+    }
+    
 }
 
 exports.getAllUsers = getAllUsers;
