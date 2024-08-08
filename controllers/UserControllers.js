@@ -69,12 +69,17 @@ const updateUser = async(req,res,next) => {
     try{
         users = await User.findByIdAndUpdate(id, 
             {name: name, gmail: gmail, age: age, address: address});
-            users = await users.save();
+            users = await users.save()
 
 
+    }catch(err){
+        if(!user){
+            return res.status(404).json({message:"user is not found"});
+        }
+        return res.status(200).json({user});
 
     }
-}
+};
 
 exports.getAllUsers = getAllUsers;
 exports.addUsers = addUsers;
