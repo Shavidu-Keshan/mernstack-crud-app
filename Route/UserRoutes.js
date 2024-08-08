@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-//insert model
+//insert models
 const User = require("../Model/UserModel");
-//insert user controller
+//insert user controllers
 const UserController = require("../controllers/UserControllers");
 
 router.get("/",UserController.getAllUsers);
 router.post("/",UserController.addUsers);
 router.get("/:id",UserController.getById);
 
-//export
+//exports
 module.exports = router;

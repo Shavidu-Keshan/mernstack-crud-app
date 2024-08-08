@@ -7,16 +7,16 @@ const userSchema = new Schema({
         required:true//validate
     },
     gmail:{
-        type:String,//dataType
-        required:true//validate
+        type:String,
+        required:true
     },
     age:{
-        type:Number,//dataType
-        required:true//validate
+        type:Number,
+        required:true
     },
     address:{
-        type:String,//dataType
-        required:true//validate
+        type:String,
+        required:true
     },
 })
 

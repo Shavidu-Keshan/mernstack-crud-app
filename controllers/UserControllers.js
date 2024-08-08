@@ -1,8 +1,8 @@
 const User = require("../Model/UserModel");
-//Display data
+//Display_data
 const getAllUsers = async(req,res,next) => {
     let Users;
-    //Get all users
+    //Get_all_users
     try{
         users = await User.find();
     }catch(err){
@@ -10,16 +10,16 @@ const getAllUsers = async(req,res,next) => {
     }
     // not found
     if(!users){
-        return res.status(404).json({ message: "User not found" });
+        return res.status(404).json({ message: "User is not found" });
 
     }
-    //Display all users
+    //Display_all_users
     return res.status(200).json({users});
 
 };
 
 
-//data inserts
+//data_inserts
 const addUsers = async (req ,res ,next) => {
     const { name, gmail, age, address } = req.body;
 
@@ -33,14 +33,14 @@ const addUsers = async (req ,res ,next) => {
     }catch(err){
         console.log(err);
     }
-    //not insert users
+    //not_inser_users
     if(!users){
-        return res.status(404).json({message:"unable to add users"});
+        return res.status(404).json({message:"Can't to add users"});
     }
     return res.status(200).json({users});
 };
 
-//getbyid
+//getid
 const getById = async (req,res,next) => {
 
     const id = req.params.id;
@@ -51,9 +51,9 @@ const getById = async (req,res,next) => {
     }catch(err){
         console.log(err);
     }
-    //not available users
+    //not_available_users
     if(!user){
-        return res.status(404).json({message:"user not found"});
+        return res.status(404).json({message:"user is not found"});
     }
     return res.status(200).json({user});
 

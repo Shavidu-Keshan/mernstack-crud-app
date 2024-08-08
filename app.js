@@ -12,7 +12,7 @@ app.use(express.json());
 app.use("/users",router);
 
 mongoose.connect("mongodb+srv://keshanshavidu:Shavindu2000@shavindu9.1gh7s13.mongodb.net/?retryWrites=true&w=majority&appName=Shavindu9")
-.then(()=> console.log("connected to Mongodb"))
+.then(()=> console.log("connected_to_Mongodb"))
 .then(() => {
     app.listen(5000);
 })
