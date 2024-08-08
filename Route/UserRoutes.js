@@ -9,6 +9,7 @@ const UserController = require("../controllers/UserControllers");
 router.get("/",UserController.getAllUsers);
 router.post("/",UserController.addUsers);
 router.get("/:id",UserController.getById);
+router.get("/:id",UserController.updateUser);
 
 //exports
 module.exports = router;

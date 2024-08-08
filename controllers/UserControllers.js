@@ -73,10 +73,10 @@ const updateUser = async(req,res,next) => {
 
 
     }catch(err){
-        if(!user){
-            return res.status(404).json({message:"user is not found"});
+        if(!users){
+            return res.status(404).json({message:"User details cannot be updated"});
         }
-        return res.status(200).json({user});
+        return res.status(200).json({users});
 
     }
 };
@@ -84,3 +84,4 @@ const updateUser = async(req,res,next) => {
 exports.getAllUsers = getAllUsers;
 exports.addUsers = addUsers;
 exports.getById = getById;
+exports.updateUser = updateUser;
