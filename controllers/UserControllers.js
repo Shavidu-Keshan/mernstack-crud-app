@@ -70,7 +70,7 @@ const updateUser = async(req,res,next) => {
         users = await User.findByIdAndUpdate(id, 
             {name: name, gmail: gmail, age: age, address: address});
             users = await users.save();
-            
+
 
 
     }
