@@ -61,7 +61,19 @@ const getById = async (req,res,next) => {
 
 //update_user_details
 const updateUser = async(req,res,next) => {
-    
+
+    const id = req.params.id;
+    const { name, gmail, age, address } =req.body;
+
+    let users;
+    try{
+        users = await User.findByIdAndUpdate(id, 
+            {name: name, gmail: gmail, age: age, address: address});
+            users = await users.save();
+            
+
+
+    }
 }
 
 exports.getAllUsers = getAllUsers;
