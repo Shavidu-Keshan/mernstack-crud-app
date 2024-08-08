@@ -59,6 +59,11 @@ const getById = async (req,res,next) => {
 
 }
 
+//update_user_details
+const updateUser = async(req,res,next) => {
+    
+}
+
 exports.getAllUsers = getAllUsers;
 exports.addUsers = addUsers;
 exports.getById = getById;
